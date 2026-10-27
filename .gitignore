@@ -1,0 +1,5 @@
+sim/vectors/
+*.vvp
+*.vcd
+__pycache__/
+results_noisy/

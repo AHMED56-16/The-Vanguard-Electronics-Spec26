@@ -1,0 +1,5 @@
+x01_vanguard_8dB         bits=65353  frames out=118 (good=118 fly=0 slip=0) CRC-valid=110  acq=1 slips=0 lol=0
+      VC1  BUS=3.70V;SOLAR=13.0W;LOAD=8.5W
+      VC2  PITCH=-0.6;ROLL=-0.2;YAW=87
+      VC0  TEMP=22.6C;BAT=85%;MODE=OK
+x02_vanguard_2dB_slips   bits=65353  frames out=118 (good=91 fly=16 slip=11) CRC-valid=0  acq=1 slips=23 lol=0

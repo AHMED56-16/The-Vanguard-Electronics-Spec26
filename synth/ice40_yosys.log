@@ -1,0 +1,2019 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Executing script file `synth_ice40.ys' --
+
+1. Executing Verilog-2005 frontend: ../rtl/ccsds_frame_sync.v
+Parsing Verilog input from `../rtl/ccsds_frame_sync.v' to AST representation.
+Generating RTLIL representation for module `\ccsds_frame_sync'.
+Successfully finished Verilog frontend.
+Parameter \FB = 1115
+
+2. Executing AST frontend in derive mode using pre-parsed AST for module `\ccsds_frame_sync'.
+Parameter \FB = 1115
+Generating RTLIL representation for module `$paramod\ccsds_frame_sync\FB=32'00000000000000000000010001011011'.
+
+3. Executing SYNTH_ICE40 pass.
+
+3.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/cells_sim.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\SB_IO'.
+Generating RTLIL representation for module `\SB_GB_IO'.
+Generating RTLIL representation for module `\SB_GB'.
+Generating RTLIL representation for module `\SB_LUT4'.
+Generating RTLIL representation for module `\SB_CARRY'.
+Generating RTLIL representation for module `\SB_DFF'.
+Generating RTLIL representation for module `\SB_DFFE'.
+Generating RTLIL representation for module `\SB_DFFSR'.
+Generating RTLIL representation for module `\SB_DFFR'.
+Generating RTLIL representation for module `\SB_DFFSS'.
+Generating RTLIL representation for module `\SB_DFFS'.
+Generating RTLIL representation for module `\SB_DFFESR'.
+Generating RTLIL representation for module `\SB_DFFER'.
+Generating RTLIL representation for module `\SB_DFFESS'.
+Generating RTLIL representation for module `\SB_DFFES'.
+Generating RTLIL representation for module `\SB_DFFN'.
+Generating RTLIL representation for module `\SB_DFFNE'.
+Generating RTLIL representation for module `\SB_DFFNSR'.
+Generating RTLIL representation for module `\SB_DFFNR'.
+Generating RTLIL representation for module `\SB_DFFNSS'.
+Generating RTLIL representation for module `\SB_DFFNS'.
+Generating RTLIL representation for module `\SB_DFFNESR'.
+Generating RTLIL representation for module `\SB_DFFNER'.
+Generating RTLIL representation for module `\SB_DFFNESS'.
+Generating RTLIL representation for module `\SB_DFFNES'.
+Generating RTLIL representation for module `\SB_RAM40_4K'.
+Generating RTLIL representation for module `\SB_RAM40_4KNR'.
+Generating RTLIL representation for module `\SB_RAM40_4KNW'.
+Generating RTLIL representation for module `\SB_RAM40_4KNRNW'.
+Generating RTLIL representation for module `\ICESTORM_LC'.
+Generating RTLIL representation for module `\SB_PLL40_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2F_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_2F_PAD'.
+Generating RTLIL representation for module `\SB_WARMBOOT'.
+Generating RTLIL representation for module `\SB_SPRAM256KA'.
+Generating RTLIL representation for module `\SB_HFOSC'.
+Generating RTLIL representation for module `\SB_LFOSC'.
+Generating RTLIL representation for module `\SB_RGBA_DRV'.
+Generating RTLIL representation for module `\SB_LED_DRV_CUR'.
+Generating RTLIL representation for module `\SB_RGB_DRV'.
+Generating RTLIL representation for module `\SB_I2C'.
+Generating RTLIL representation for module `\SB_SPI'.
+Generating RTLIL representation for module `\SB_LEDDA_IP'.
+Generating RTLIL representation for module `\SB_FILTER_50NS'.
+Generating RTLIL representation for module `\SB_IO_I3C'.
+Generating RTLIL representation for module `\SB_IO_OD'.
+Generating RTLIL representation for module `\SB_MAC16'.
+Generating RTLIL representation for module `\ICESTORM_RAM'.
+Successfully finished Verilog frontend.
+
+3.2. Executing HIERARCHY pass (managing design hierarchy).
+
+3.2.1. Analyzing design hierarchy..
+Top module:  \ccsds_frame_sync
+
+3.2.2. Analyzing design hierarchy..
+Top module:  \ccsds_frame_sync
+Removed 0 unused modules.
+
+3.3. Executing PROC pass (convert processes to netlists).
+
+3.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+Cleaned up 1 empty switch.
+
+3.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$561 in module SB_DFFNES.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1353$554 in module SB_DFFNESS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$550 in module SB_DFFNER.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1212$543 in module SB_DFFNESR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1138$540 in module SB_DFFNS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1088$537 in module SB_DFFNSS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1017$534 in module SB_DFFNR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:967$531 in module SB_DFFNSR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$523 in module SB_DFFES.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:742$516 in module SB_DFFESS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$512 in module SB_DFFER.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:601$505 in module SB_DFFESR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:527$502 in module SB_DFFS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:477$499 in module SB_DFFSS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:406$496 in module SB_DFFR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:356$493 in module SB_DFFSR.
+Marked 13 switch rules as full_case in process $proc$../rtl/ccsds_frame_sync.v:123$208 in module ccsds_frame_sync.
+Removed a total of 0 dead cases.
+
+3.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 13 redundant assignments.
+Promoted 44 assignments to connections.
+
+3.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$564'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$560'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$553'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$549'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$542'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$539'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$536'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$533'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$530'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$528'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$526'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$522'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$515'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$511'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$504'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$501'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$498'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$495'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$492'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$490'.
+  Set init value: \Q = 1'0
+
+3.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \S in `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$561'.
+Found async reset \R in `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$550'.
+Found async reset \S in `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1138$540'.
+Found async reset \R in `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1017$534'.
+Found async reset \S in `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$523'.
+Found async reset \R in `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$512'.
+Found async reset \S in `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:527$502'.
+Found async reset \R in `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:406$496'.
+
+3.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~40 debug messages>
+
+3.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$564'.
+Creating decoders for process `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$561'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$560'.
+Creating decoders for process `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1353$554'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$553'.
+Creating decoders for process `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$550'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$549'.
+Creating decoders for process `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1212$543'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$542'.
+Creating decoders for process `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1138$540'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$539'.
+Creating decoders for process `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1088$537'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$536'.
+Creating decoders for process `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1017$534'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$533'.
+Creating decoders for process `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:967$531'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$530'.
+Creating decoders for process `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:922$529'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$528'.
+Creating decoders for process `\SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:882$527'.
+Creating decoders for process `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$526'.
+Creating decoders for process `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$523'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$522'.
+Creating decoders for process `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:742$516'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$515'.
+Creating decoders for process `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$512'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$511'.
+Creating decoders for process `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:601$505'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$504'.
+Creating decoders for process `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:527$502'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$501'.
+Creating decoders for process `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:477$499'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$498'.
+Creating decoders for process `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:406$496'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$495'.
+Creating decoders for process `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:356$493'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$492'.
+Creating decoders for process `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:311$491'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$490'.
+Creating decoders for process `\SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:271$489'.
+Creating decoders for process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+     1/84: $4$lookahead\vcc$207[127:0]$260
+     2/84: $4$bitselwrite$data$../rtl/ccsds_frame_sync.v:239$166[127:0]$258
+     3/84: $4$bitselwrite$mask$../rtl/ccsds_frame_sync.v:239$165[127:0]$257
+     4/84: $4$bitselwrite$sel$../rtl/ccsds_frame_sync.v:239$167[31:0]$259
+     5/84: $3$lookahead\vcc$207[127:0]$253
+     6/84: $3$bitselwrite$sel$../rtl/ccsds_frame_sync.v:239$167[31:0]$252
+     7/84: $3$bitselwrite$data$../rtl/ccsds_frame_sync.v:239$166[127:0]$251
+     8/84: $3$bitselwrite$mask$../rtl/ccsds_frame_sync.v:239$165[127:0]$250
+     9/84: $9\do_sf[0:0]
+    10/84: $8\do_sf[0:0]
+    11/84: $5\t_slip[0:0]
+    12/84: $5\do_fd[0:0]
+    13/84: $5\t_good[0:0]
+    14/84: $5\t_fly[0:0]
+    15/84: $4\t_fly[0:0]
+    16/84: $4\t_good[0:0]
+    17/84: $7\do_sf[0:0]
+    18/84: $4\do_fd[0:0]
+    19/84: $4\t_slip[0:0]
+    20/84: $6\do_sf[0:0]
+    21/84: $5\do_sf[0:0]
+    22/84: $4\do_sf[0:0]
+    23/84: $3\t_slip[0:0]
+    24/84: $3\t_fly[0:0]
+    25/84: $3\t_good[0:0]
+    26/84: $3\do_fd[0:0]
+    27/84: $3\do_sf[0:0]
+    28/84: $2$lookahead\vcc$207[127:0]$221
+    29/84: $2$bitselwrite$sel$../rtl/ccsds_frame_sync.v:239$167[31:0]$220
+    30/84: $2$bitselwrite$data$../rtl/ccsds_frame_sync.v:239$166[127:0]$219
+    31/84: $2$bitselwrite$mask$../rtl/ccsds_frame_sync.v:239$165[127:0]$218
+    32/84: $2\t_slip[0:0]
+    33/84: $2\t_fly[0:0]
+    34/84: $2\t_good[0:0]
+    35/84: $2\do_fd[0:0]
+    36/84: $2\do_sf[0:0]
+    37/84: $1$lookahead\vcc$207[127:0]$217
+    38/84: $0\fd_valid[0:0]
+    39/84: $0\hdr_valid[0:0]
+    40/84: $0\byte_eof[0:0]
+    41/84: $0\byte_sof[0:0]
+    42/84: $0\byte_valid[0:0]
+    43/84: $1$bitselwrite$sel$../rtl/ccsds_frame_sync.v:239$167[31:0]$216
+    44/84: $1$bitselwrite$data$../rtl/ccsds_frame_sync.v:239$166[127:0]$215
+    45/84: $1$bitselwrite$mask$../rtl/ccsds_frame_sync.v:239$165[127:0]$214
+    46/84: $1\t_slip[0:0]
+    47/84: $1\t_fly[0:0]
+    48/84: $1\t_good[0:0]
+    49/84: $1\do_fd[0:0]
+    50/84: $1\do_sf[0:0]
+    51/84: $0\crc_ok_q[0:0]
+    52/84: $0\vcid_q[2:0]
+    53/84: $0\h2[7:0]
+    54/84: $0\h1[7:0]
+    55/84: $0\h0[7:0]
+    56/84: $0\lfsr[7:0]
+    57/84: $0\crc[15:0]
+    58/84: $0\bytecnt[10:0]
+    59/84: $0\sh[7:0]
+    60/84: $0\bph[2:0]
+    61/84: $0\late_ok[0:0]
+    62/84: $0\miss[3:0]
+    63/84: $0\chk_ok[3:0]
+    64/84: $0\cnt[13:0]
+    65/84: $0\pol[0:0]
+    66/84: $0\st[1:0]
+    67/84: $0\b_q[0:0]
+    68/84: $0\m_q[5:0]
+    69/84: $0\sr[31:0]
+    70/84: $0\lol_count[15:0]
+    71/84: $0\slip_count[15:0]
+    72/84: $0\acq_count[15:0]
+    73/84: $0\fd_vcid[2:0]
+    74/84: $0\fd_crc_ok[0:0]
+    75/84: $0\fd_slip[0:0]
+    76/84: $0\fd_fly[0:0]
+    77/84: $0\fd_good[0:0]
+    78/84: $0\hdr_vcfc[7:0]
+    79/84: $0\hdr_mcfc[7:0]
+    80/84: $0\hdr_ocf[0:0]
+    81/84: $0\hdr_vcid[2:0]
+    82/84: $0\hdr_scid[9:0]
+    83/84: $0\hdr_version[1:0]
+    84/84: $0\byte_data[7:0]
+Creating decoders for process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$277'.
+Creating decoders for process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$288'.
+Creating decoders for process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$299'.
+Creating decoders for process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$310'.
+
+3.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\ccsds_frame_sync.\pop8$func$../rtl/ccsds_frame_sync.v:75$161.$result' from process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$277'.
+No latch inferred for signal `\ccsds_frame_sync.\pop8$func$../rtl/ccsds_frame_sync.v:75$168.$result' from process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$277'.
+No latch inferred for signal `\ccsds_frame_sync.\pop8$func$../rtl/ccsds_frame_sync.v:75$168.x' from process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$277'.
+No latch inferred for signal `\ccsds_frame_sync.\pop8$func$../rtl/ccsds_frame_sync.v:75$162.$result' from process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$288'.
+No latch inferred for signal `\ccsds_frame_sync.\pop8$func$../rtl/ccsds_frame_sync.v:75$169.$result' from process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$288'.
+No latch inferred for signal `\ccsds_frame_sync.\pop8$func$../rtl/ccsds_frame_sync.v:75$169.x' from process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$288'.
+No latch inferred for signal `\ccsds_frame_sync.\pop8$func$../rtl/ccsds_frame_sync.v:76$163.$result' from process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$299'.
+No latch inferred for signal `\ccsds_frame_sync.\pop8$func$../rtl/ccsds_frame_sync.v:76$170.$result' from process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$299'.
+No latch inferred for signal `\ccsds_frame_sync.\pop8$func$../rtl/ccsds_frame_sync.v:76$170.x' from process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$299'.
+No latch inferred for signal `\ccsds_frame_sync.\pop8$func$../rtl/ccsds_frame_sync.v:76$164.$result' from process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$310'.
+No latch inferred for signal `\ccsds_frame_sync.\pop8$func$../rtl/ccsds_frame_sync.v:76$171.$result' from process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$310'.
+No latch inferred for signal `\ccsds_frame_sync.\pop8$func$../rtl/ccsds_frame_sync.v:76$171.x' from process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$310'.
+
+3.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\SB_DFFNES.\Q' using process `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$561'.
+  created $adff cell `$procdff$1773' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNESS.\Q' using process `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1353$554'.
+  created $dff cell `$procdff$1774' with negative edge clock.
+Creating register for signal `\SB_DFFNER.\Q' using process `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$550'.
+  created $adff cell `$procdff$1775' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNESR.\Q' using process `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1212$543'.
+  created $dff cell `$procdff$1776' with negative edge clock.
+Creating register for signal `\SB_DFFNS.\Q' using process `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1138$540'.
+  created $adff cell `$procdff$1777' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNSS.\Q' using process `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1088$537'.
+  created $dff cell `$procdff$1778' with negative edge clock.
+Creating register for signal `\SB_DFFNR.\Q' using process `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1017$534'.
+  created $adff cell `$procdff$1779' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNSR.\Q' using process `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:967$531'.
+  created $dff cell `$procdff$1780' with negative edge clock.
+Creating register for signal `\SB_DFFNE.\Q' using process `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:922$529'.
+  created $dff cell `$procdff$1781' with negative edge clock.
+Creating register for signal `\SB_DFFN.\Q' using process `\SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:882$527'.
+  created $dff cell `$procdff$1782' with negative edge clock.
+Creating register for signal `\SB_DFFES.\Q' using process `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$523'.
+  created $adff cell `$procdff$1783' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFESS.\Q' using process `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:742$516'.
+  created $dff cell `$procdff$1784' with positive edge clock.
+Creating register for signal `\SB_DFFER.\Q' using process `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$512'.
+  created $adff cell `$procdff$1785' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFESR.\Q' using process `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:601$505'.
+  created $dff cell `$procdff$1786' with positive edge clock.
+Creating register for signal `\SB_DFFS.\Q' using process `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:527$502'.
+  created $adff cell `$procdff$1787' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFSS.\Q' using process `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:477$499'.
+  created $dff cell `$procdff$1788' with positive edge clock.
+Creating register for signal `\SB_DFFR.\Q' using process `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:406$496'.
+  created $adff cell `$procdff$1789' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFSR.\Q' using process `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:356$493'.
+  created $dff cell `$procdff$1790' with positive edge clock.
+Creating register for signal `\SB_DFFE.\Q' using process `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:311$491'.
+  created $dff cell `$procdff$1791' with positive edge clock.
+Creating register for signal `\SB_DFF.\Q' using process `\SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:271$489'.
+  created $dff cell `$procdff$1792' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\byte_valid' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1793' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\byte_data' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1794' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\byte_sof' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1795' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\byte_eof' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1796' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\hdr_valid' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1797' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\hdr_version' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1798' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\hdr_scid' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1799' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\hdr_vcid' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1800' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\hdr_ocf' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1801' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\hdr_mcfc' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1802' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\hdr_vcfc' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1803' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\fd_valid' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1804' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\fd_good' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1805' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\fd_fly' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1806' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\fd_slip' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1807' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\fd_crc_ok' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1808' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\fd_vcid' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1809' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\acq_count' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1810' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\slip_count' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1811' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\lol_count' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1812' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\sr' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1813' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\m_q' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1814' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\b_q' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1815' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\st' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1816' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\pol' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1817' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\cnt' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1818' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\chk_ok' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1819' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\miss' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1820' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\late_ok' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1821' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\bph' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1822' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\sh' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1823' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\bytecnt' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1824' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\crc' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1825' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\lfsr' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1826' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\h0' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1827' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\h1' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1828' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\h2' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1829' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\vcid_q' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1830' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\crc_ok_q' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1831' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\vcc' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1832' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\do_sf' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1833' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\do_fd' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1834' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\t_good' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1835' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\t_fly' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1836' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.\t_slip' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1837' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.$bitselwrite$mask$../rtl/ccsds_frame_sync.v:239$165' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1838' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.$bitselwrite$data$../rtl/ccsds_frame_sync.v:239$166' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1839' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.$bitselwrite$sel$../rtl/ccsds_frame_sync.v:239$167' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1840' with positive edge clock.
+Creating register for signal `\ccsds_frame_sync.$lookahead\vcc$207' using process `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+  created $dff cell `$procdff$1841' with positive edge clock.
+
+3.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$564'.
+Found and cleaned up 1 empty switch in `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$561'.
+Removing empty process `SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1414$561'.
+Removing empty process `SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$560'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1353$554'.
+Removing empty process `SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1353$554'.
+Removing empty process `SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$553'.
+Found and cleaned up 1 empty switch in `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$550'.
+Removing empty process `SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1273$550'.
+Removing empty process `SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$549'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1212$543'.
+Removing empty process `SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1212$543'.
+Removing empty process `SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$542'.
+Removing empty process `SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1138$540'.
+Removing empty process `SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$539'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1088$537'.
+Removing empty process `SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1088$537'.
+Removing empty process `SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$536'.
+Removing empty process `SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1017$534'.
+Removing empty process `SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$533'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:967$531'.
+Removing empty process `SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:967$531'.
+Removing empty process `SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$530'.
+Found and cleaned up 1 empty switch in `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:922$529'.
+Removing empty process `SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:922$529'.
+Removing empty process `SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$528'.
+Removing empty process `SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:882$527'.
+Removing empty process `SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$526'.
+Found and cleaned up 1 empty switch in `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$523'.
+Removing empty process `SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:803$523'.
+Removing empty process `SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$522'.
+Found and cleaned up 2 empty switches in `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:742$516'.
+Removing empty process `SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:742$516'.
+Removing empty process `SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$515'.
+Found and cleaned up 1 empty switch in `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$512'.
+Removing empty process `SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:662$512'.
+Removing empty process `SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$511'.
+Found and cleaned up 2 empty switches in `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:601$505'.
+Removing empty process `SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:601$505'.
+Removing empty process `SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$504'.
+Removing empty process `SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:527$502'.
+Removing empty process `SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$501'.
+Found and cleaned up 1 empty switch in `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:477$499'.
+Removing empty process `SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:477$499'.
+Removing empty process `SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$498'.
+Removing empty process `SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:406$496'.
+Removing empty process `SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$495'.
+Found and cleaned up 1 empty switch in `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:356$493'.
+Removing empty process `SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:356$493'.
+Removing empty process `SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$492'.
+Found and cleaned up 1 empty switch in `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:311$491'.
+Removing empty process `SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:311$491'.
+Removing empty process `SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$490'.
+Removing empty process `SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:271$489'.
+Found and cleaned up 22 empty switches in `\ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+Removing empty process `ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:123$208'.
+Removing empty process `ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$277'.
+Removing empty process `ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$288'.
+Removing empty process `ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$299'.
+Removing empty process `ccsds_frame_sync.$proc$../rtl/ccsds_frame_sync.v:0$310'.
+Cleaned up 40 empty switches.
+
+3.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+<suppressed ~137 debug messages>
+
+3.4. Executing FLATTEN pass (flatten design).
+
+3.5. Executing TRIBUF pass.
+
+3.6. Executing DEMINOUT pass (demote inout ports to input or output).
+
+3.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+<suppressed ~11 debug messages>
+
+3.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+Removed 59 unused cells and 505 unused wires.
+<suppressed ~71 debug messages>
+
+3.9. Executing CHECK pass (checking for obvious problems).
+Checking module ccsds_frame_sync...
+Found and reported 0 problems.
+
+3.10. Executing OPT pass (performing simple optimizations).
+
+3.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+
+3.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+<suppressed ~291 debug messages>
+Removed a total of 97 cells.
+
+3.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ccsds_frame_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$1000.
+    dead port 2/2 on $mux $procmux$1002.
+    dead port 2/2 on $mux $procmux$1004.
+    dead port 2/2 on $mux $procmux$1006.
+    dead port 2/2 on $mux $procmux$1009.
+    dead port 2/2 on $mux $procmux$1017.
+    dead port 2/2 on $mux $procmux$1019.
+    dead port 2/2 on $mux $procmux$1021.
+    dead port 2/2 on $mux $procmux$1024.
+    dead port 2/2 on $mux $procmux$1031.
+    dead port 2/2 on $mux $procmux$1033.
+    dead port 2/2 on $mux $procmux$1036.
+    dead port 2/2 on $mux $procmux$1053.
+    dead port 2/2 on $mux $procmux$1056.
+    dead port 2/2 on $mux $procmux$1063.
+    dead port 2/2 on $mux $procmux$1066.
+    dead port 2/2 on $mux $procmux$1092.
+    dead port 2/2 on $mux $procmux$750.
+    dead port 2/2 on $mux $procmux$752.
+    dead port 2/2 on $mux $procmux$755.
+    dead port 2/2 on $mux $procmux$797.
+    dead port 2/2 on $mux $procmux$800.
+    dead port 1/2 on $mux $procmux$834.
+    dead port 1/2 on $mux $procmux$837.
+    dead port 1/3 on $pmux $procmux$840.
+    dead port 2/3 on $pmux $procmux$840.
+    dead port 2/2 on $mux $procmux$843.
+    dead port 2/2 on $mux $procmux$846.
+    dead port 1/2 on $mux $procmux$853.
+    dead port 1/3 on $pmux $procmux$856.
+    dead port 2/3 on $pmux $procmux$856.
+    dead port 2/2 on $mux $procmux$859.
+    dead port 2/2 on $mux $procmux$862.
+    dead port 1/2 on $mux $procmux$869.
+    dead port 1/3 on $pmux $procmux$872.
+    dead port 2/3 on $pmux $procmux$872.
+    dead port 2/2 on $mux $procmux$875.
+    dead port 2/2 on $mux $procmux$878.
+    dead port 1/2 on $mux $procmux$885.
+    dead port 1/3 on $pmux $procmux$888.
+    dead port 2/3 on $pmux $procmux$888.
+    dead port 2/2 on $mux $procmux$891.
+    dead port 2/2 on $mux $procmux$894.
+    dead port 2/2 on $mux $procmux$901.
+    dead port 1/3 on $pmux $procmux$904.
+    dead port 2/3 on $pmux $procmux$904.
+    dead port 2/2 on $mux $procmux$907.
+    dead port 2/2 on $mux $procmux$910.
+    dead port 2/2 on $mux $procmux$917.
+    dead port 1/3 on $pmux $procmux$920.
+    dead port 2/3 on $pmux $procmux$920.
+    dead port 2/2 on $mux $procmux$923.
+    dead port 2/2 on $mux $procmux$926.
+    dead port 1/3 on $pmux $procmux$933.
+    dead port 2/3 on $pmux $procmux$933.
+    dead port 2/2 on $mux $procmux$936.
+    dead port 2/2 on $mux $procmux$939.
+    dead port 1/3 on $pmux $procmux$946.
+    dead port 2/3 on $pmux $procmux$946.
+    dead port 2/2 on $mux $procmux$949.
+    dead port 2/2 on $mux $procmux$952.
+    dead port 1/3 on $pmux $procmux$959.
+    dead port 2/3 on $pmux $procmux$959.
+    dead port 2/2 on $mux $procmux$962.
+    dead port 2/2 on $mux $procmux$965.
+    dead port 1/3 on $pmux $procmux$972.
+    dead port 2/3 on $pmux $procmux$972.
+    dead port 2/2 on $mux $procmux$975.
+    dead port 2/2 on $mux $procmux$978.
+    dead port 1/3 on $pmux $procmux$985.
+    dead port 2/3 on $pmux $procmux$985.
+    dead port 2/2 on $mux $procmux$988.
+    dead port 2/2 on $mux $procmux$991.
+Removed 73 multiplexer ports.
+<suppressed ~46 debug messages>
+
+3.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ccsds_frame_sync.
+    New ctrl vector for $pmux cell $procmux$1162: $auto$opt_reduce.cc:134:opt_pmux$1845
+    New ctrl vector for $pmux cell $procmux$1176: $auto$opt_reduce.cc:134:opt_pmux$1847
+    New ctrl vector for $pmux cell $procmux$1190: $auto$opt_reduce.cc:134:opt_pmux$1849
+    New ctrl vector for $pmux cell $procmux$1204: $auto$opt_reduce.cc:134:opt_pmux$1851
+    New ctrl vector for $pmux cell $procmux$1244: $auto$opt_reduce.cc:134:opt_pmux$1853
+    New ctrl vector for $pmux cell $procmux$1262: $auto$opt_reduce.cc:134:opt_pmux$1855
+    New ctrl vector for $pmux cell $procmux$1280: $auto$opt_reduce.cc:134:opt_pmux$1857
+    New ctrl vector for $pmux cell $procmux$1296: $auto$opt_reduce.cc:134:opt_pmux$1859
+    New ctrl vector for $pmux cell $procmux$1312: $auto$opt_reduce.cc:134:opt_pmux$1861
+    New ctrl vector for $pmux cell $procmux$1332: $auto$opt_reduce.cc:134:opt_pmux$1863
+    New ctrl vector for $pmux cell $procmux$1348: $auto$opt_reduce.cc:134:opt_pmux$1865
+    New ctrl vector for $pmux cell $procmux$1362: $auto$opt_reduce.cc:134:opt_pmux$1867
+    New ctrl vector for $pmux cell $procmux$1376: $auto$opt_reduce.cc:134:opt_pmux$1869
+    New ctrl vector for $pmux cell $procmux$1573: $auto$opt_reduce.cc:134:opt_pmux$1871
+    New ctrl vector for $pmux cell $procmux$1592: $auto$opt_reduce.cc:134:opt_pmux$1873
+    New ctrl vector for $pmux cell $procmux$1671: $auto$opt_reduce.cc:134:opt_pmux$1875
+    New ctrl vector for $pmux cell $procmux$1687: $auto$opt_reduce.cc:134:opt_pmux$1877
+    New ctrl vector for $pmux cell $procmux$1703: $auto$opt_reduce.cc:134:opt_pmux$1879
+    New ctrl vector for $pmux cell $procmux$1719: $auto$opt_reduce.cc:134:opt_pmux$1881
+    New ctrl vector for $pmux cell $procmux$1735: $auto$opt_reduce.cc:134:opt_pmux$1883
+    New ctrl vector for $pmux cell $procmux$1751: $auto$opt_reduce.cc:134:opt_pmux$1885
+    New ctrl vector for $pmux cell $procmux$1765: $auto$opt_reduce.cc:134:opt_pmux$1887
+    New ctrl vector for $pmux cell $procmux$1040: $auto$opt_reduce.cc:134:opt_pmux$1889
+    New ctrl vector for $pmux cell $procmux$1050: $auto$opt_reduce.cc:134:opt_pmux$1891
+    New ctrl vector for $pmux cell $procmux$1060: $auto$opt_reduce.cc:134:opt_pmux$1893
+    New ctrl vector for $pmux cell $procmux$1070: $auto$opt_reduce.cc:134:opt_pmux$1895
+  Optimizing cells in module \ccsds_frame_sync.
+Performed a total of 26 changes.
+
+3.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+<suppressed ~78 debug messages>
+Removed a total of 26 cells.
+
+3.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+Removed 0 unused cells and 185 unused wires.
+<suppressed ~1 debug messages>
+
+3.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+
+3.10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ccsds_frame_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~47 debug messages>
+
+3.10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ccsds_frame_sync.
+Performed a total of 0 changes.
+
+3.10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+Removed a total of 0 cells.
+
+3.10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+
+3.10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+
+3.10.16. Finished OPT passes. (There is nothing left to do.)
+
+3.11. Executing FSM pass (extract and optimize FSM).
+
+3.11.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking ccsds_frame_sync.st as FSM state register:
+    Register is connected to module port.
+    Users of register don't seem to benefit from recoding.
+
+3.11.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+3.11.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+3.11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+
+3.11.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+3.11.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+3.11.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+3.11.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+3.12. Executing OPT pass (performing simple optimizations).
+
+3.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+
+3.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+Removed a total of 0 cells.
+
+3.12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ccsds_frame_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~47 debug messages>
+
+3.12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ccsds_frame_sync.
+Performed a total of 0 changes.
+
+3.12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+Removed a total of 0 cells.
+
+3.12.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$1832 ($dff) from module ccsds_frame_sync (D = $2$lookahead\vcc$207[127:0]$221, Q = \vcc, rval = 128'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1896 ($sdff) from module ccsds_frame_sync (D = $or$../rtl/ccsds_frame_sync.v:0$276_Y, Q = \vcc).
+Adding SRST signal on $procdff$1831 ($dff) from module ccsds_frame_sync (D = $procmux$1249_Y, Q = \crc_ok_q, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1900 ($sdff) from module ccsds_frame_sync (D = $procmux$1247_Y, Q = \crc_ok_q).
+Adding SRST signal on $procdff$1830 ($dff) from module ccsds_frame_sync (D = $procmux$1267_Y, Q = \vcid_q, rval = 3'000).
+Adding EN signal on $auto$ff.cc:266:slice$1912 ($sdff) from module ccsds_frame_sync (D = $procmux$1265_Y, Q = \vcid_q).
+Adding SRST signal on $procdff$1829 ($dff) from module ccsds_frame_sync (D = $procmux$1283_Y, Q = \h2, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$1924 ($sdff) from module ccsds_frame_sync (D = { \sh [6:0] \d }, Q = \h2).
+Adding SRST signal on $procdff$1828 ($dff) from module ccsds_frame_sync (D = $procmux$1299_Y, Q = \h1, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$1930 ($sdff) from module ccsds_frame_sync (D = { \sh [6:0] \d }, Q = \h1).
+Adding SRST signal on $procdff$1827 ($dff) from module ccsds_frame_sync (D = $procmux$1315_Y, Q = \h0, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$1936 ($sdff) from module ccsds_frame_sync (D = { \sh [6:0] \d }, Q = \h0).
+Adding SRST signal on $procdff$1825 ($dff) from module ccsds_frame_sync (D = $procmux$1337_Y, Q = \crc, rval = 16'1111111111111111).
+Adding EN signal on $auto$ff.cc:266:slice$1942 ($sdff) from module ccsds_frame_sync (D = $procmux$1335_Y, Q = \crc).
+Adding SRST signal on $procdff$1824 ($dff) from module ccsds_frame_sync (D = $procmux$1353_Y, Q = \bytecnt, rval = 11'00000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1950 ($sdff) from module ccsds_frame_sync (D = $procmux$1351_Y, Q = \bytecnt).
+Adding SRST signal on $procdff$1823 ($dff) from module ccsds_frame_sync (D = $procmux$1367_Y, Q = \sh, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$1960 ($sdff) from module ccsds_frame_sync (D = $procmux$1365_Y, Q = \sh).
+Adding SRST signal on $procdff$1822 ($dff) from module ccsds_frame_sync (D = $procmux$1381_Y, Q = \bph, rval = 3'000).
+Adding EN signal on $auto$ff.cc:266:slice$1968 ($sdff) from module ccsds_frame_sync (D = $procmux$1379_Y, Q = \bph).
+Adding SRST signal on $procdff$1821 ($dff) from module ccsds_frame_sync (D = $procmux$1415_Y, Q = \late_ok, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1976 ($sdff) from module ccsds_frame_sync (D = $procmux$1412_Y, Q = \late_ok).
+Adding SRST signal on $procdff$1820 ($dff) from module ccsds_frame_sync (D = $procmux$1446_Y, Q = \miss, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$1990 ($sdff) from module ccsds_frame_sync (D = $procmux$1443_Y, Q = \miss).
+Adding SRST signal on $procdff$1819 ($dff) from module ccsds_frame_sync (D = $procmux$1464_Y, Q = \chk_ok, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:266:slice$2004 ($sdff) from module ccsds_frame_sync (D = $procmux$1459_Y, Q = \chk_ok).
+Adding SRST signal on $procdff$1818 ($dff) from module ccsds_frame_sync (D = $procmux$1491_Y, Q = \cnt, rval = 14'00000000000001).
+Adding EN signal on $auto$ff.cc:266:slice$2016 ($sdff) from module ccsds_frame_sync (D = $procmux$1486_Y, Q = \cnt).
+Adding SRST signal on $procdff$1817 ($dff) from module ccsds_frame_sync (D = $procmux$1503_Y, Q = \pol, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$2024 ($sdff) from module ccsds_frame_sync (D = $not$../rtl/ccsds_frame_sync.v:150$223_Y, Q = \pol).
+Adding SRST signal on $procdff$1816 ($dff) from module ccsds_frame_sync (D = $procmux$1539_Y, Q = \st, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$2028 ($sdff) from module ccsds_frame_sync (D = $procmux$1534_Y, Q = \st).
+Adding SRST signal on $procdff$1815 ($dff) from module ccsds_frame_sync (D = $procmux$1545_Y, Q = \b_q, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$2040 ($sdff) from module ccsds_frame_sync (D = \sr [0], Q = \b_q).
+Adding SRST signal on $procdff$1814 ($dff) from module ccsds_frame_sync (D = $procmux$1551_Y, Q = \m_q, rval = 6'010000).
+Adding EN signal on $auto$ff.cc:266:slice$2042 ($sdff) from module ccsds_frame_sync (D = \pc, Q = \m_q).
+Adding SRST signal on $procdff$1813 ($dff) from module ccsds_frame_sync (D = $procmux$1557_Y, Q = \sr, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$2044 ($sdff) from module ccsds_frame_sync (D = { \sr [30:0] \bit_in }, Q = \sr).
+Adding SRST signal on $procdff$1812 ($dff) from module ccsds_frame_sync (D = $procmux$1576_Y, Q = \lol_count, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2046 ($sdff) from module ccsds_frame_sync (D = $add$../rtl/ccsds_frame_sync.v:211$244_Y, Q = \lol_count).
+Adding SRST signal on $procdff$1811 ($dff) from module ccsds_frame_sync (D = $procmux$1595_Y, Q = \slip_count, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2054 ($sdff) from module ccsds_frame_sync (D = $procmux$1586_Y, Q = \slip_count).
+Adding SRST signal on $procdff$1810 ($dff) from module ccsds_frame_sync (D = $procmux$1613_Y, Q = \acq_count, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2064 ($sdff) from module ccsds_frame_sync (D = $add$../rtl/ccsds_frame_sync.v:164$228_Y, Q = \acq_count).
+Adding SRST signal on $procdff$1809 ($dff) from module ccsds_frame_sync (D = $procmux$1622_Y, Q = \fd_vcid, rval = 3'000).
+Adding EN signal on $auto$ff.cc:266:slice$2068 ($sdff) from module ccsds_frame_sync (D = \vcid_q, Q = \fd_vcid).
+Adding SRST signal on $procdff$1808 ($dff) from module ccsds_frame_sync (D = $procmux$1631_Y, Q = \fd_crc_ok, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$2072 ($sdff) from module ccsds_frame_sync (D = \crc_ok_q, Q = \fd_crc_ok).
+Adding SRST signal on $procdff$1807 ($dff) from module ccsds_frame_sync (D = $procmux$1640_Y, Q = \fd_slip, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$2076 ($sdff) from module ccsds_frame_sync (D = $3\t_slip[0:0], Q = \fd_slip).
+Adding SRST signal on $procdff$1806 ($dff) from module ccsds_frame_sync (D = $procmux$1649_Y, Q = \fd_fly, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$2080 ($sdff) from module ccsds_frame_sync (D = $3\t_fly[0:0], Q = \fd_fly).
+Adding SRST signal on $procdff$1805 ($dff) from module ccsds_frame_sync (D = $procmux$1658_Y, Q = \fd_good, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$2084 ($sdff) from module ccsds_frame_sync (D = $3\t_good[0:0], Q = \fd_good).
+Adding SRST signal on $procdff$1804 ($dff) from module ccsds_frame_sync (D = $procmux$1147_Y, Q = \fd_valid, rval = 1'0).
+Adding SRST signal on $procdff$1803 ($dff) from module ccsds_frame_sync (D = $procmux$1674_Y, Q = \hdr_vcfc, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$2091 ($sdff) from module ccsds_frame_sync (D = { \sh [6:0] \d }, Q = \hdr_vcfc).
+Adding SRST signal on $procdff$1802 ($dff) from module ccsds_frame_sync (D = $procmux$1690_Y, Q = \hdr_mcfc, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$2097 ($sdff) from module ccsds_frame_sync (D = \h2, Q = \hdr_mcfc).
+Adding SRST signal on $procdff$1801 ($dff) from module ccsds_frame_sync (D = $procmux$1706_Y, Q = \hdr_ocf, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$2103 ($sdff) from module ccsds_frame_sync (D = \h1 [0], Q = \hdr_ocf).
+Adding SRST signal on $procdff$1800 ($dff) from module ccsds_frame_sync (D = $procmux$1722_Y, Q = \hdr_vcid, rval = 3'000).
+Adding EN signal on $auto$ff.cc:266:slice$2109 ($sdff) from module ccsds_frame_sync (D = \h1 [3:1], Q = \hdr_vcid).
+Adding SRST signal on $procdff$1799 ($dff) from module ccsds_frame_sync (D = $procmux$1738_Y, Q = \hdr_scid, rval = 10'0000000000).
+Adding EN signal on $auto$ff.cc:266:slice$2115 ($sdff) from module ccsds_frame_sync (D = { \h0 [5:0] \h1 [7:4] }, Q = \hdr_scid).
+Adding SRST signal on $procdff$1798 ($dff) from module ccsds_frame_sync (D = $procmux$1754_Y, Q = \hdr_version, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$2121 ($sdff) from module ccsds_frame_sync (D = \h0 [7:6], Q = \hdr_version).
+Adding SRST signal on $procdff$1797 ($dff) from module ccsds_frame_sync (D = $procmux$1155_Y, Q = \hdr_valid, rval = 1'0).
+Adding SRST signal on $procdff$1796 ($dff) from module ccsds_frame_sync (D = $eq$../rtl/ccsds_frame_sync.v:186$232_Y, Q = \byte_eof, rval = 1'0).
+Adding SRST signal on $procdff$1795 ($dff) from module ccsds_frame_sync (D = $eq$../rtl/ccsds_frame_sync.v:185$231_Y, Q = \byte_sof, rval = 1'0).
+Adding SRST signal on $procdff$1794 ($dff) from module ccsds_frame_sync (D = $procmux$1768_Y, Q = \byte_data, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$2160 ($sdff) from module ccsds_frame_sync (D = { \sh [6:0] \d }, Q = \byte_data).
+Adding SRST signal on $procdff$1793 ($dff) from module ccsds_frame_sync (D = $procmux$1199_Y, Q = \byte_valid, rval = 1'0).
+
+3.12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+Removed 147 unused cells and 147 unused wires.
+<suppressed ~148 debug messages>
+
+3.12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+<suppressed ~13 debug messages>
+
+3.12.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.12.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ccsds_frame_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~25 debug messages>
+
+3.12.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ccsds_frame_sync.
+    New input vector for $reduce_or cell $auto$opt_dff.cc:254:combine_resets$2174: { $procmux$1042_CMP $procmux$1005_CMP $auto$rtlil.cc:2401:Not$2168 $auto$rtlil.cc:2401:Not$2170 $auto$rtlil.cc:2401:Not$2172 }
+    New input vector for $reduce_or cell $auto$opt_dff.cc:254:combine_resets$2159: { $procmux$1042_CMP $procmux$1005_CMP $auto$rtlil.cc:2401:Not$2151 $auto$rtlil.cc:2401:Not$2153 $auto$rtlil.cc:2401:Not$2155 $auto$rtlil.cc:2401:Not$2157 }
+    New input vector for $reduce_or cell $auto$opt_dff.cc:254:combine_resets$2148: { $procmux$1042_CMP $procmux$1005_CMP $auto$rtlil.cc:2401:Not$2146 $auto$rtlil.cc:2401:Not$2144 $auto$rtlil.cc:2401:Not$2142 $auto$rtlil.cc:2401:Not$2140 }
+    New input vector for $reduce_or cell $auto$opt_dff.cc:254:combine_resets$2137: { $procmux$1042_CMP $procmux$1005_CMP $auto$rtlil.cc:2401:Not$2135 $auto$rtlil.cc:2401:Not$2133 $auto$rtlil.cc:2401:Not$2131 $auto$rtlil.cc:2401:Not$2129 }
+  Optimizing cells in module \ccsds_frame_sync.
+Performed a total of 4 changes.
+
+3.12.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+<suppressed ~183 debug messages>
+Removed a total of 61 cells.
+
+3.12.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.12.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+Removed 0 unused cells and 61 unused wires.
+<suppressed ~1 debug messages>
+
+3.12.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+
+3.12.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.12.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ccsds_frame_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~25 debug messages>
+
+3.12.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ccsds_frame_sync.
+Performed a total of 0 changes.
+
+3.12.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+Removed a total of 0 cells.
+
+3.12.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.12.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+
+3.12.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+
+3.12.23. Finished OPT passes. (There is nothing left to do.)
+
+3.13. Executing WREDUCE pass (reducing word size of cells).
+Removed top 30 bits (of 32) from port B of cell ccsds_frame_sync.$le$../rtl/ccsds_frame_sync.v:91$179 ($le).
+Removed top 27 bits (of 32) from port B of cell ccsds_frame_sync.$ge$../rtl/ccsds_frame_sync.v:92$180 ($ge).
+Removed top 27 bits (of 32) from port B of cell ccsds_frame_sync.$ge$../rtl/ccsds_frame_sync.v:93$181 ($ge).
+Removed top 29 bits (of 32) from port B of cell ccsds_frame_sync.$le$../rtl/ccsds_frame_sync.v:93$182 ($le).
+Removed top 27 bits (of 32) from port B of cell ccsds_frame_sync.$ge$../rtl/ccsds_frame_sync.v:94$184 ($ge).
+Removed top 29 bits (of 32) from port B of cell ccsds_frame_sync.$le$../rtl/ccsds_frame_sync.v:94$185 ($le).
+Removed top 18 bits (of 32) from port B of cell ccsds_frame_sync.$ge$../rtl/ccsds_frame_sync.v:96$190 ($ge).
+Removed top 18 bits (of 32) from port B of cell ccsds_frame_sync.$le$../rtl/ccsds_frame_sync.v:96$192 ($le).
+Removed top 29 bits (of 32) from port B of cell ccsds_frame_sync.$le$../rtl/ccsds_frame_sync.v:97$195 ($le).
+Removed top 18 bits (of 32) from port B of cell ccsds_frame_sync.$le$../rtl/ccsds_frame_sync.v:98$197 ($le).
+Removed top 3 bits (of 16) from mux cell ccsds_frame_sync.$ternary$../rtl/ccsds_frame_sync.v:113$201 ($mux).
+Removed top 3 bits (of 16) from port B of cell ccsds_frame_sync.$xor$../rtl/ccsds_frame_sync.v:113$202 ($xor).
+Removed top 24 bits (of 32) from port B of cell ccsds_frame_sync.$shiftx$../rtl/ccsds_frame_sync.v:0$206 ($shiftx).
+Removed top 3 bits (of 4) from port B of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:160$225 ($add).
+Removed top 3 bits (of 4) from port B of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:162$226 ($add).
+Removed top 27 bits (of 32) from port Y of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:162$226 ($add).
+Removed top 27 bits (of 32) from port A of cell ccsds_frame_sync.$ge$../rtl/ccsds_frame_sync.v:162$227 ($ge).
+Removed top 31 bits (of 32) from port B of cell ccsds_frame_sync.$ge$../rtl/ccsds_frame_sync.v:162$227 ($ge).
+Removed top 15 bits (of 16) from port B of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:164$228 ($add).
+Removed top 2 bits (of 3) from port B of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:181$230 ($add).
+Removed top 10 bits (of 11) from port B of cell ccsds_frame_sync.$eq$../rtl/ccsds_frame_sync.v:189$235 ($eq).
+Removed top 9 bits (of 11) from port B of cell ccsds_frame_sync.$eq$../rtl/ccsds_frame_sync.v:190$236 ($eq).
+Removed top 9 bits (of 11) from port B of cell ccsds_frame_sync.$eq$../rtl/ccsds_frame_sync.v:191$237 ($eq).
+Removed top 3 bits (of 4) from port B of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:209$241 ($add).
+Removed top 3 bits (of 4) from port B of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:210$242 ($add).
+Removed top 27 bits (of 32) from port Y of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:210$242 ($add).
+Removed top 27 bits (of 32) from port A of cell ccsds_frame_sync.$ge$../rtl/ccsds_frame_sync.v:210$243 ($ge).
+Removed top 30 bits (of 32) from port B of cell ccsds_frame_sync.$ge$../rtl/ccsds_frame_sync.v:210$243 ($ge).
+Removed top 15 bits (of 16) from port B of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:211$244 ($add).
+Removed top 15 bits (of 16) from port B of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:218$246 ($add).
+Removed top 25 bits (of 33) from port A of cell ccsds_frame_sync.$neg$../rtl/ccsds_frame_sync.v:0$264 ($neg).
+Converting cell ccsds_frame_sync.$neg$../rtl/ccsds_frame_sync.v:0$264 ($neg) from signed to unsigned.
+Removed top 1 bits (of 8) from port A of cell ccsds_frame_sync.$neg$../rtl/ccsds_frame_sync.v:0$264 ($neg).
+Removed top 24 bits (of 32) from port B of cell ccsds_frame_sync.$shiftx$../rtl/ccsds_frame_sync.v:0$268 ($shiftx).
+Removed top 15 bits (of 16) from port B of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:239$269 ($add).
+Removed top 112 bits (of 128) from port Y of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:239$269 ($add).
+Removed top 2 bits (of 4) from port Y of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:72$281 ($add).
+Removed top 2 bits (of 4) from port A of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:72$282 ($add).
+Removed top 1 bits (of 4) from port Y of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:72$282 ($add).
+Removed top 1 bits (of 4) from port A of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:72$283 ($add).
+Removed top 2 bits (of 4) from port Y of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:72$292 ($add).
+Removed top 2 bits (of 4) from port A of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:72$293 ($add).
+Removed top 1 bits (of 4) from port Y of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:72$293 ($add).
+Removed top 1 bits (of 4) from port A of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:72$294 ($add).
+Removed top 2 bits (of 4) from port Y of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:72$303 ($add).
+Removed top 2 bits (of 4) from port A of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:72$304 ($add).
+Removed top 1 bits (of 4) from port Y of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:72$304 ($add).
+Removed top 1 bits (of 4) from port A of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:72$305 ($add).
+Removed top 2 bits (of 4) from port Y of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:72$314 ($add).
+Removed top 2 bits (of 4) from port A of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:72$315 ($add).
+Removed top 1 bits (of 4) from port Y of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:72$315 ($add).
+Removed top 1 bits (of 4) from port A of cell ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:72$316 ($add).
+Removed top 3 bits (of 4) from port B of cell ccsds_frame_sync.$auto$opt_dff.cc:195:make_patterns_logic$1905 ($ne).
+Removed top 3 bits (of 5) from port B of cell ccsds_frame_sync.$auto$opt_dff.cc:195:make_patterns_logic$1907 ($ne).
+Removed top 3 bits (of 5) from port B of cell ccsds_frame_sync.$auto$opt_dff.cc:195:make_patterns_logic$1919 ($ne).
+Removed top 1 bits (of 2) from port B of cell ccsds_frame_sync.$procmux$1005_CMP0 ($eq).
+Removed top 1 bits (of 8) from FF cell ccsds_frame_sync.$auto$ff.cc:266:slice$1961 ($sdffe).
+Removed top 1 bits (of 8) from mux cell ccsds_frame_sync.$procmux$1365 ($mux).
+Removed top 1 bits (of 8) from mux cell ccsds_frame_sync.$procmux$1362 ($mux).
+Removed top 1 bits (of 8) from mux cell ccsds_frame_sync.$procmux$1359 ($mux).
+Removed top 27 bits (of 32) from wire ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:162$226_Y.
+Removed top 27 bits (of 32) from wire ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:210$242_Y.
+Removed top 112 bits (of 128) from wire ccsds_frame_sync.$add$../rtl/ccsds_frame_sync.v:239$269_Y.
+Removed top 1 bits (of 8) from wire ccsds_frame_sync.$procmux$1359_Y.
+Removed top 1 bits (of 8) from wire ccsds_frame_sync.$procmux$1362_Y.
+Removed top 1 bits (of 8) from wire ccsds_frame_sync.$procmux$1365_Y.
+Removed top 3 bits (of 16) from wire ccsds_frame_sync.$ternary$../rtl/ccsds_frame_sync.v:113$201_Y.
+Removed top 1 bits (of 8) from wire ccsds_frame_sync.sh.
+
+3.14. Executing PEEPOPT pass (run peephole optimizers).
+
+3.15. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+Removed 0 unused cells and 8 unused wires.
+<suppressed ~1 debug messages>
+
+3.16. Executing SHARE pass (SAT-based resource sharing).
+
+3.17. Executing TECHMAP pass (map to technology primitives).
+
+3.17.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/usr/bin/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+3.17.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~322 debug messages>
+
+3.18. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+
+3.19. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+
+3.20. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module ccsds_frame_sync:
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:160$225 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:162$226 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:164$228 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:171$229 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:181$230 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:187$233 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:209$241 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:210$242 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:211$244 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:218$246 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:239$269 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$281 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$282 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$283 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$284 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$285 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$286 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$287 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$292 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$293 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$294 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$295 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$296 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$297 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$298 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$303 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$304 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$305 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$306 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$307 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$308 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$309 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$314 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$315 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$316 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$317 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$318 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$319 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:72$320 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:75$173 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:76$174 ($add).
+  creating $macc model for $add$../rtl/ccsds_frame_sync.v:77$175 ($add).
+  creating $macc model for $neg$../rtl/ccsds_frame_sync.v:0$264 ($neg).
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:75$173 into $add$../rtl/ccsds_frame_sync.v:77$175.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:76$174 into $add$../rtl/ccsds_frame_sync.v:77$175.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$319 into $add$../rtl/ccsds_frame_sync.v:72$320.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$318 into $add$../rtl/ccsds_frame_sync.v:72$320.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$317 into $add$../rtl/ccsds_frame_sync.v:72$320.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$316 into $add$../rtl/ccsds_frame_sync.v:72$320.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$315 into $add$../rtl/ccsds_frame_sync.v:72$320.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$314 into $add$../rtl/ccsds_frame_sync.v:72$320.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$308 into $add$../rtl/ccsds_frame_sync.v:72$309.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$307 into $add$../rtl/ccsds_frame_sync.v:72$309.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$306 into $add$../rtl/ccsds_frame_sync.v:72$309.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$305 into $add$../rtl/ccsds_frame_sync.v:72$309.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$304 into $add$../rtl/ccsds_frame_sync.v:72$309.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$303 into $add$../rtl/ccsds_frame_sync.v:72$309.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$297 into $add$../rtl/ccsds_frame_sync.v:72$298.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$296 into $add$../rtl/ccsds_frame_sync.v:72$298.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$295 into $add$../rtl/ccsds_frame_sync.v:72$298.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$294 into $add$../rtl/ccsds_frame_sync.v:72$298.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$293 into $add$../rtl/ccsds_frame_sync.v:72$298.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$292 into $add$../rtl/ccsds_frame_sync.v:72$298.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$286 into $add$../rtl/ccsds_frame_sync.v:72$287.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$285 into $add$../rtl/ccsds_frame_sync.v:72$287.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$284 into $add$../rtl/ccsds_frame_sync.v:72$287.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$283 into $add$../rtl/ccsds_frame_sync.v:72$287.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$282 into $add$../rtl/ccsds_frame_sync.v:72$287.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$281 into $add$../rtl/ccsds_frame_sync.v:72$287.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$287 into $add$../rtl/ccsds_frame_sync.v:77$175.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$309 into $add$../rtl/ccsds_frame_sync.v:77$175.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$298 into $add$../rtl/ccsds_frame_sync.v:77$175.
+  merging $macc model for $add$../rtl/ccsds_frame_sync.v:72$320 into $add$../rtl/ccsds_frame_sync.v:77$175.
+  creating $alu model for $macc $neg$../rtl/ccsds_frame_sync.v:0$264.
+  creating $alu model for $macc $add$../rtl/ccsds_frame_sync.v:239$269.
+  creating $alu model for $macc $add$../rtl/ccsds_frame_sync.v:218$246.
+  creating $alu model for $macc $add$../rtl/ccsds_frame_sync.v:211$244.
+  creating $alu model for $macc $add$../rtl/ccsds_frame_sync.v:210$242.
+  creating $alu model for $macc $add$../rtl/ccsds_frame_sync.v:209$241.
+  creating $alu model for $macc $add$../rtl/ccsds_frame_sync.v:187$233.
+  creating $alu model for $macc $add$../rtl/ccsds_frame_sync.v:181$230.
+  creating $alu model for $macc $add$../rtl/ccsds_frame_sync.v:171$229.
+  creating $alu model for $macc $add$../rtl/ccsds_frame_sync.v:164$228.
+  creating $alu model for $macc $add$../rtl/ccsds_frame_sync.v:162$226.
+  creating $alu model for $macc $add$../rtl/ccsds_frame_sync.v:160$225.
+  creating $macc cell for $add$../rtl/ccsds_frame_sync.v:77$175: $auto$alumacc.cc:365:replace_macc$2184
+  creating $alu model for $ge$../rtl/ccsds_frame_sync.v:162$227 ($ge): new $alu
+  creating $alu model for $ge$../rtl/ccsds_frame_sync.v:210$243 ($ge): new $alu
+  creating $alu model for $ge$../rtl/ccsds_frame_sync.v:92$180 ($ge): new $alu
+  creating $alu model for $ge$../rtl/ccsds_frame_sync.v:93$181 ($ge): new $alu
+  creating $alu model for $ge$../rtl/ccsds_frame_sync.v:94$184 ($ge): new $alu
+  creating $alu model for $ge$../rtl/ccsds_frame_sync.v:96$190 ($ge): new $alu
+  creating $alu model for $le$../rtl/ccsds_frame_sync.v:91$179 ($le): new $alu
+  creating $alu model for $le$../rtl/ccsds_frame_sync.v:93$182 ($le): new $alu
+  creating $alu model for $le$../rtl/ccsds_frame_sync.v:94$185 ($le): new $alu
+  creating $alu model for $le$../rtl/ccsds_frame_sync.v:96$192 ($le): new $alu
+  creating $alu model for $le$../rtl/ccsds_frame_sync.v:97$195 ($le): new $alu
+  creating $alu model for $le$../rtl/ccsds_frame_sync.v:98$197 ($le): new $alu
+  creating $alu cell for $le$../rtl/ccsds_frame_sync.v:98$197: $auto$alumacc.cc:485:replace_alu$2197
+  creating $alu cell for $le$../rtl/ccsds_frame_sync.v:97$195: $auto$alumacc.cc:485:replace_alu$2206
+  creating $alu cell for $le$../rtl/ccsds_frame_sync.v:96$192: $auto$alumacc.cc:485:replace_alu$2219
+  creating $alu cell for $le$../rtl/ccsds_frame_sync.v:94$185: $auto$alumacc.cc:485:replace_alu$2228
+  creating $alu cell for $le$../rtl/ccsds_frame_sync.v:93$182: $auto$alumacc.cc:485:replace_alu$2241
+  creating $alu cell for $le$../rtl/ccsds_frame_sync.v:91$179: $auto$alumacc.cc:485:replace_alu$2254
+  creating $alu cell for $ge$../rtl/ccsds_frame_sync.v:96$190: $auto$alumacc.cc:485:replace_alu$2267
+  creating $alu cell for $ge$../rtl/ccsds_frame_sync.v:94$184: $auto$alumacc.cc:485:replace_alu$2276
+  creating $alu cell for $ge$../rtl/ccsds_frame_sync.v:93$181: $auto$alumacc.cc:485:replace_alu$2285
+  creating $alu cell for $ge$../rtl/ccsds_frame_sync.v:92$180: $auto$alumacc.cc:485:replace_alu$2294
+  creating $alu cell for $ge$../rtl/ccsds_frame_sync.v:210$243: $auto$alumacc.cc:485:replace_alu$2303
+  creating $alu cell for $ge$../rtl/ccsds_frame_sync.v:162$227: $auto$alumacc.cc:485:replace_alu$2312
+  creating $alu cell for $add$../rtl/ccsds_frame_sync.v:160$225: $auto$alumacc.cc:485:replace_alu$2321
+  creating $alu cell for $add$../rtl/ccsds_frame_sync.v:162$226: $auto$alumacc.cc:485:replace_alu$2324
+  creating $alu cell for $add$../rtl/ccsds_frame_sync.v:164$228: $auto$alumacc.cc:485:replace_alu$2327
+  creating $alu cell for $add$../rtl/ccsds_frame_sync.v:171$229: $auto$alumacc.cc:485:replace_alu$2330
+  creating $alu cell for $add$../rtl/ccsds_frame_sync.v:181$230: $auto$alumacc.cc:485:replace_alu$2333
+  creating $alu cell for $add$../rtl/ccsds_frame_sync.v:187$233: $auto$alumacc.cc:485:replace_alu$2336
+  creating $alu cell for $add$../rtl/ccsds_frame_sync.v:209$241: $auto$alumacc.cc:485:replace_alu$2339
+  creating $alu cell for $add$../rtl/ccsds_frame_sync.v:210$242: $auto$alumacc.cc:485:replace_alu$2342
+  creating $alu cell for $add$../rtl/ccsds_frame_sync.v:211$244: $auto$alumacc.cc:485:replace_alu$2345
+  creating $alu cell for $add$../rtl/ccsds_frame_sync.v:218$246: $auto$alumacc.cc:485:replace_alu$2348
+  creating $alu cell for $add$../rtl/ccsds_frame_sync.v:239$269: $auto$alumacc.cc:485:replace_alu$2351
+  creating $alu cell for $neg$../rtl/ccsds_frame_sync.v:0$264: $auto$alumacc.cc:485:replace_alu$2354
+  created 24 $alu and 1 $macc cells.
+
+3.21. Executing OPT pass (performing simple optimizations).
+
+3.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+
+3.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+Removed a total of 0 cells.
+
+3.21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ccsds_frame_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~25 debug messages>
+
+3.21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ccsds_frame_sync.
+Performed a total of 0 changes.
+
+3.21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+Removed a total of 0 cells.
+
+3.21.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.21.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+Removed 30 unused cells and 42 unused wires.
+<suppressed ~33 debug messages>
+
+3.21.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+
+3.21.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.21.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ccsds_frame_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~25 debug messages>
+
+3.21.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ccsds_frame_sync.
+Performed a total of 0 changes.
+
+3.21.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+Removed a total of 0 cells.
+
+3.21.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.21.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+
+3.21.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+
+3.21.16. Finished OPT passes. (There is nothing left to do.)
+
+3.22. Executing MEMORY pass.
+
+3.22.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+3.22.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+3.22.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+3.22.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+3.22.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+3.22.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+
+3.22.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+3.22.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+3.22.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+
+3.22.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+
+3.24. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+3.25. Executing TECHMAP pass (map to technology primitives).
+
+3.25.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/brams_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_'.
+Successfully finished Verilog frontend.
+
+3.25.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/spram_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/spram_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_SPRAM_'.
+Successfully finished Verilog frontend.
+
+3.25.3. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+3.26. Executing ICE40_BRAMINIT pass.
+
+3.27. Executing OPT pass (performing simple optimizations).
+
+3.27.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+<suppressed ~63 debug messages>
+
+3.27.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+Removed a total of 0 cells.
+
+3.27.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.27.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+Removed 3 unused cells and 60 unused wires.
+<suppressed ~4 debug messages>
+
+3.27.5. Finished fast OPT passes.
+
+3.28. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+3.29. Executing OPT pass (performing simple optimizations).
+
+3.29.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+
+3.29.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+Removed a total of 0 cells.
+
+3.29.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ccsds_frame_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+3.29.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ccsds_frame_sync.
+    Consolidated identical input bits for $mux cell $procmux$1517:
+      Old ports: A=2'11, B=2'00, Y=$procmux$1517_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$1517_Y [0]
+      New connections: $procmux$1517_Y [1] = $procmux$1517_Y [0]
+    Consolidated identical input bits for $mux cell $procmux$1530:
+      Old ports: A=2'00, B=2'10, Y=$procmux$1530_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$1530_Y [1]
+      New connections: $procmux$1530_Y [0] = 1'0
+    Consolidated identical input bits for $mux cell $ternary$../rtl/ccsds_frame_sync.v:113$201:
+      Old ports: A=13'0000000000000, B=13'1000000100001, Y={ $auto$wreduce.cc:461:run$2181 [12:1] \crc_nx [0] }
+      New ports: A=1'0, B=1'1, Y=\crc_nx [0]
+      New connections: $auto$wreduce.cc:461:run$2181 [12:1] = { \crc_nx [0] 6'000000 \crc_nx [0] 4'0000 }
+  Optimizing cells in module \ccsds_frame_sync.
+Performed a total of 3 changes.
+
+3.29.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+3.29.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.29.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+3.29.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+<suppressed ~5 debug messages>
+
+3.29.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.29.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ccsds_frame_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~21 debug messages>
+
+3.29.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ccsds_frame_sync.
+Performed a total of 0 changes.
+
+3.29.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+Removed a total of 0 cells.
+
+3.29.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.29.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+3.29.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+
+3.29.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.29.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \ccsds_frame_sync..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~21 debug messages>
+
+3.29.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \ccsds_frame_sync.
+Performed a total of 0 changes.
+
+3.29.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+Removed a total of 0 cells.
+
+3.29.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.29.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+
+3.29.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+
+3.29.23. Finished OPT passes. (There is nothing left to do.)
+
+3.30. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+3.31. Executing TECHMAP pass (map to technology primitives).
+
+3.31.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+3.31.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/arith_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ice40_alu'.
+Successfully finished Verilog frontend.
+
+3.31.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $logic_or.
+Using template $paramod$091610cd349a68bd5539cffd7126f0d76e9bca00\_80_ice40_alu for cells of type $alu.
+Using template $paramod$943564b9366bbc392bf4bbc801aa0a2d7742a4e0\_80_ice40_alu for cells of type $alu.
+Using template $paramod$7af24cf7f572852703f08ef7a936c59efa2c57af\_80_ice40_alu for cells of type $alu.
+Using template $paramod$e04283ca12514baf3d204c6994bec8f178dd89f8\_80_ice40_alu for cells of type $alu.
+Using template $paramod$9970e6a829a899c1fae39c88305c3c80d98a6bfd\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $mux.
+Using template $paramod$4f7462fd7944a40ab328577064922bdf555975a5\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $logic_and.
+Using template $paramod$179d4b9f746374e8d7b6edc89282d0baa97f54c2\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod$constmap:4142d301c79182ad8ca02320cc87d31ed55e5985$paramod$9fd534a8e85f1367b697266785c6c3545dbc60d7\_90_shift_shiftx for cells of type $shiftx.
+Using template $paramod$2af30114e9bd4ccb04dad757b3f0a8f6bf0615b0\_80_ice40_alu for cells of type $alu.
+Using template $paramod$32a7b7b86c07519b7537abc18e96f0331f97914d\_80_ice40_alu for cells of type $alu.
+Using template $paramod$713617589782cfade849bb573b5c36106c4b708f\_80_ice40_alu for cells of type $alu.
+Using template $paramod$3ef7d3dd227da7627a99c5e5a6a4deb817573e39\_80_ice40_alu for cells of type $alu.
+Using template $paramod$2f5fb04daf2da94d981bf9455fa4454c6ec8b705\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $reduce_and.
+Using template $paramod$6b90a16b6f3b57b9c9d958838204f952a01dc262\_80_ice40_alu for cells of type $alu.
+Using template $paramod$3e2546d640bb80c4407ce51aec1dbdbdc5bff143\_80_ice40_alu for cells of type $alu.
+Using template $paramod$constmap:5b7a86f055f056b0ef5c3c2a54cd0bcbfbd78a91$paramod$35d43f283fa197ecd06c429c67def546fd6dc204\_90_shift_shiftx for cells of type $shift.
+Analyzing pattern of constant bits for this cell:
+Creating constmapped module `$paramod$constmap:391ed386a5460bc01550bbd1e64ddee1e6666a82$paramod$35d43f283fa197ecd06c429c67def546fd6dc204\_90_shift_shiftx'.
+
+3.31.42. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$constmap:391ed386a5460bc01550bbd1e64ddee1e6666a82$paramod$35d43f283fa197ecd06c429c67def546fd6dc204\_90_shift_shiftx..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$2899.
+    dead port 2/2 on $mux $procmux$2893.
+    dead port 2/2 on $mux $procmux$2887.
+    dead port 2/2 on $mux $procmux$2881.
+    dead port 2/2 on $mux $procmux$2875.
+    dead port 2/2 on $mux $procmux$2869.
+    dead port 2/2 on $mux $procmux$2863.
+    dead port 2/2 on $mux $procmux$2857.
+Removed 8 multiplexer ports.
+<suppressed ~844 debug messages>
+
+3.31.43. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$constmap:391ed386a5460bc01550bbd1e64ddee1e6666a82$paramod$35d43f283fa197ecd06c429c67def546fd6dc204\_90_shift_shiftx.
+<suppressed ~26 debug messages>
+Removed 0 unused cells and 13 unused wires.
+Using template $paramod$constmap:391ed386a5460bc01550bbd1e64ddee1e6666a82$paramod$35d43f283fa197ecd06c429c67def546fd6dc204\_90_shift_shiftx for cells of type $shift.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper maccmap for cells of type $macc.
+  add bits { \diff [25] \sr [26] \diff [27] \diff [28] \sr [29] \sr [30] \sr [31] \sr [9] \diff [10] \diff [11] \diff [12] \diff [13] \diff [14] \diff [15] \diff [17] \diff [18] \diff [19] \sr [20] \sr [21] \diff [22] \diff [23] \sr [1] \diff [2] \diff [3] \diff [4] \sr [5] \sr [6] \sr [7] \sr [24] \sr [8] \diff [16] \diff [0] } (32 bits)
+  packed 15 (15) bits / 15 words into adder tree
+Using extmapper simplemap for cells of type $sdff.
+Using template $paramod$ec32b97001540459632a2df9accd677d3703ea0f\_80_ice40_alu for cells of type $alu.
+Using template $paramod$c5c783b17ab1d780abfad8cfe6563a0a7b47a3b0\_90_pmux for cells of type $pmux.
+Using template $paramod$e978c189388a43a00e4e725f292dc6d7f2ae25b3\_90_pmux for cells of type $pmux.
+Using template $paramod$521ce43182eecb9f60c72393a788160d2c356bf5\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $sdffe.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000001 for cells of type $fa.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000010 for cells of type $fa.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000011 for cells of type $fa.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000100 for cells of type $fa.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000101 for cells of type $fa.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000110 for cells of type $fa.
+Using template $paramod$00298f3f8094950cb9a5ff2fda48d0d8bde8806c\_80_ice40_alu for cells of type $alu.
+No more expansions possible.
+<suppressed ~678 debug messages>
+
+3.32. Executing OPT pass (performing simple optimizations).
+
+3.32.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+<suppressed ~7692 debug messages>
+
+3.32.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+<suppressed ~1047 debug messages>
+Removed a total of 349 cells.
+
+3.32.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.32.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+Removed 950 unused cells and 909 unused wires.
+<suppressed ~951 debug messages>
+
+3.32.5. Finished fast OPT passes.
+
+3.33. Executing ICE40_OPT pass (performing simple optimizations).
+
+3.33.1. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2197.slice[0].carry: CO=\cnt [3]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2206.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$2206.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2219.slice[0].carry: CO=\cnt [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2228.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$2228.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2241.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$2228.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2254.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$2228.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2267.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$2206.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2276.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$2228.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2285.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$2228.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2294.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$2228.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2303.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$2303.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2312.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$2312.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2321.slice[0].carry: CO=\chk_ok [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2324.slice[0].carry: CO=\chk_ok [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2324.slice[4].carry: CO=1'0
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2327.slice[0].carry: CO=\acq_count [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2330.slice[0].carry: CO=\cnt [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2333.slice[0].carry: CO=\bph [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2336.slice[0].carry: CO=\bytecnt [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2339.slice[0].carry: CO=\miss [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2342.slice[0].carry: CO=\miss [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2342.slice[4].carry: CO=1'0
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2345.slice[0].carry: CO=\lol_count [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2348.slice[0].carry: CO=\slip_count [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2351.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$2351.B [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[0].carry: CO=1'1
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[10].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [10]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[11].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [11]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[12].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [12]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[13].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [13]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[14].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [14]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[15].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [15]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[16].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [16]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[17].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [17]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[18].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [18]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[19].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [19]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[1].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [1]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[20].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [20]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[21].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [21]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[22].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [22]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[23].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [23]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[24].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [24]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[25].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [25]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[26].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [26]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[27].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [27]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[28].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [28]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[29].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [29]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[2].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [2]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[30].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [30]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[31].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [31]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[32].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [32]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[3].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [3]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[7].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [7]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[8].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [8]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[9].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.C [9]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$maccmap.cc:240:synth$3706.slice[5].carry: CO=1'0
+
+3.33.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+<suppressed ~8 debug messages>
+
+3.33.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+<suppressed ~276 debug messages>
+Removed a total of 92 cells.
+
+3.33.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.33.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+Removed 6 unused cells and 32 unused wires.
+<suppressed ~7 debug messages>
+
+3.33.6. Rerunning OPT passes. (Removed registers in this run.)
+
+3.33.7. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[4].carry: CO=$auto$alumacc.cc:485:replace_alu$2354.BB [4]
+
+3.33.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+<suppressed ~42 debug messages>
+
+3.33.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+Removed a total of 0 cells.
+
+3.33.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.33.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+Removed 0 unused cells and 26 unused wires.
+<suppressed ~1 debug messages>
+
+3.33.12. Rerunning OPT passes. (Removed registers in this run.)
+
+3.33.13. Running ICE40 specific optimizations.
+
+3.33.14. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+
+3.33.15. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+Removed a total of 0 cells.
+
+3.33.16. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.33.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+
+3.33.18. Finished OPT passes. (There is nothing left to do.)
+
+3.34. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+3.35. Executing TECHMAP pass (map to technology primitives).
+
+3.35.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+3.35.2. Continuing TECHMAP pass.
+Using template \$_SDFF_PP0_ for cells of type $_SDFF_PP0_.
+Using template \$_SDFFCE_PP0P_ for cells of type $_SDFFCE_PP0P_.
+Using template \$_SDFFCE_PP1P_ for cells of type $_SDFFCE_PP1P_.
+No more expansions possible.
+<suppressed ~379 debug messages>
+
+3.36. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+
+3.37. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+Mapping ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2321.slice[0].carry ($lut).
+Mapping ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2324.slice[4].carry ($lut).
+Mapping ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2327.slice[0].carry ($lut).
+Mapping ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2330.slice[0].carry ($lut).
+Mapping ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2333.slice[0].carry ($lut).
+Mapping ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2336.slice[0].carry ($lut).
+Mapping ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2339.slice[0].carry ($lut).
+Mapping ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2342.slice[4].carry ($lut).
+Mapping ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2345.slice[0].carry ($lut).
+Mapping ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2348.slice[0].carry ($lut).
+Mapping ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2351.slice[0].carry ($lut).
+Mapping ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[0].carry ($lut).
+Mapping ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[10].carry ($lut).
+Mapping ccsds_frame_sync.$auto$alumacc.cc:485:replace_alu$2354.slice[4].carry ($lut).
+Mapping ccsds_frame_sync.$auto$maccmap.cc:240:synth$3706.slice[5].carry ($lut).
+
+3.38. Executing ICE40_OPT pass (performing simple optimizations).
+
+3.38.1. Running ICE40 specific optimizations.
+
+3.38.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+<suppressed ~1000 debug messages>
+
+3.38.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+<suppressed ~3426 debug messages>
+Removed a total of 1142 cells.
+
+3.38.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.38.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+Removed 0 unused cells and 2888 unused wires.
+<suppressed ~1 debug messages>
+
+3.38.6. Rerunning OPT passes. (Removed registers in this run.)
+
+3.38.7. Running ICE40 specific optimizations.
+
+3.38.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+<suppressed ~64 debug messages>
+
+3.38.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+<suppressed ~81 debug messages>
+Removed a total of 27 cells.
+
+3.38.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.38.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+
+3.38.12. Rerunning OPT passes. (Removed registers in this run.)
+
+3.38.13. Running ICE40 specific optimizations.
+
+3.38.14. Executing OPT_EXPR pass (perform const folding).
+Optimizing module ccsds_frame_sync.
+
+3.38.15. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\ccsds_frame_sync'.
+Removed a total of 0 cells.
+
+3.38.16. Executing OPT_DFF pass (perform DFF optimizations).
+
+3.38.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \ccsds_frame_sync..
+
+3.38.18. Finished OPT passes. (There is nothing left to do.)
+
+3.39. Executing TECHMAP pass (map to technology primitives).
+
+3.39.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/latches_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/latches_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Successfully finished Verilog frontend.
+
+3.39.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+3.40. Executing ABC pass (technology mapping using ABC).
+
+3.40.1. Extracting gate netlist of module `\ccsds_frame_sync' to `<abc-temp-dir>/input.blif'..
+Extracted 1575 gates and 1879 wires to a netlist network with 302 inputs and 299 outputs.
+
+3.40.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + lutpack -S 1 
+ABC: + dress <abc-temp-dir>/input.blif 
+ABC: Total number of equiv classes                =     472.
+ABC: Participating nodes from both networks       =     985.
+ABC: Participating nodes from the first network   =     471. (  77.72 % of nodes)
+ABC: Participating nodes from the second network  =     514. (  84.82 % of nodes)
+ABC: Node pairs (any polarity)                    =     471. (  77.72 % of names can be moved)
+ABC: Node pairs (same polarity)                   =     409. (  67.49 % of names can be moved)
+ABC: Total runtime =     0.04 sec
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+3.40.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:      605
+ABC RESULTS:        internal signals:     1278
+ABC RESULTS:           input signals:      302
+ABC RESULTS:          output signals:      299
+Removing temp directory.
+
+3.41. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+3.42. Executing TECHMAP pass (map to technology primitives).
+
+3.42.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+3.42.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~22 debug messages>
+Removed 93 unused cells and 776 unused wires.
+
+3.43. Executing OPT_LUT pass (optimize LUTs).
+Discovering LUTs.
+Number of LUTs:      708
+  1-LUT               34
+  2-LUT               83
+  3-LUT              289
+  4-LUT              302
+  with \SB_CARRY    (#0)   99
+  with \SB_CARRY    (#1)   98
+
+Eliminating LUTs.
+Number of LUTs:      708
+  1-LUT               34
+  2-LUT               83
+  3-LUT              289
+  4-LUT              302
+  with \SB_CARRY    (#0)   99
+  with \SB_CARRY    (#1)   98
+
+Combining LUTs.
+Number of LUTs:      692
+  1-LUT               34
+  2-LUT               64
+  3-LUT              279
+  4-LUT              315
+  with \SB_CARRY    (#0)   99
+  with \SB_CARRY    (#1)   98
+
+Eliminated 0 LUTs.
+Combined 16 LUTs.
+<suppressed ~3126 debug messages>
+
+3.44. Executing TECHMAP pass (map to technology primitives).
+
+3.44.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+3.44.2. Continuing TECHMAP pass.
+Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b\$lut for cells of type $lut.
+Using template $paramod$6e238df02989b317f10820a22773676e71120644\$lut for cells of type $lut.
+Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
+Using template $paramod$c24ed72ebb67e9ead6029e42e909ef7fc0abbb11\$lut for cells of type $lut.
+Using template $paramod$6d6beead1425af15cf78b27fd9b11b41b5d4bce8\$lut for cells of type $lut.
+Using template $paramod$4b2297966ddb718657b80566604f97685ffc0120\$lut for cells of type $lut.
+Using template $paramod$b431bfd938e35871dd0b7668e1503c7e8b9d491c\$lut for cells of type $lut.
+Using template $paramod$fd904e9e35cfd343a9df248824bd3f1408724879\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000001 for cells of type $lut.
+Using template $paramod$e9c77024ca501b890c641f9c0b10e27242db8730\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10001111 for cells of type $lut.
+Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000000 for cells of type $lut.
+Using template $paramod$332a399730bfc61adea04021a76b1c4e4030f37d\$lut for cells of type $lut.
+Using template $paramod$a50be0e6fa3a01511bb234559cb74fb8bd3e2061\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101100 for cells of type $lut.
+Using template $paramod$43779580bfffd5d5a9f321249a174febf1dac288\$lut for cells of type $lut.
+Using template $paramod$45d617c2ce0041e27b541f62b0fc3c3ce441a616\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001101 for cells of type $lut.
+Using template $paramod$1bf62ab10e48d71d6497bccacf5c70420c470fe9\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11010000 for cells of type $lut.
+Using template $paramod$c5b694ec89d7629b942ccf6a9be1d39e24f8edec\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01110000 for cells of type $lut.
+Using template $paramod$6b0849254d6c87461fb93e37cc18f089f61eb912\$lut for cells of type $lut.
+Using template $paramod$0f52647588235a7349ddd3f3432c9ac1e33ad9e1\$lut for cells of type $lut.
+Using template $paramod$cde3aa23c1efa60a470cf0f0281347d6ba585afa\$lut for cells of type $lut.
+Using template $paramod$82b4a585d1edcb5c6e755dc9bd3392228a1c1304\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01001111 for cells of type $lut.
+Using template $paramod$608f40069c27841a5b3bdf03643a34bdc8974072\$lut for cells of type $lut.
+Using template $paramod$ed10455c824c2a3761aabdeb1e31dad905f66e6e\$lut for cells of type $lut.
+Using template $paramod$973818279bc95792902f3c09371fd2407d04a2a5\$lut for cells of type $lut.
+Using template $paramod$7a9d9396461df152f697894fa3b294ad1b285e08\$lut for cells of type $lut.
+Using template $paramod$d6d3aaeac1b9aa2c4b652c48e0deb565040dda72\$lut for cells of type $lut.
+Using template $paramod$e49f6e3576ef1a6d2f58c54414dbb786af8cc869\$lut for cells of type $lut.
+Using template $paramod$ea0faad69a26c91786a25961ea149d0e0961eb1f\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1011 for cells of type $lut.
+Using template $paramod$f3e1547c4b47e64c590e75cf09078b2507c8cc75\$lut for cells of type $lut.
+Using template $paramod$ae9b8abdb4f811ce37985dd5106af9cd21223954\$lut for cells of type $lut.
+Using template $paramod$2c4c7dfdf674b9c90d6c2cae622d527a6d7d0c22\$lut for cells of type $lut.
+Using template $paramod$c5f3c57a6d466a2f42208bafb8985b96ce884440\$lut for cells of type $lut.
+Using template $paramod$4972722c284f07fee673f7cb99e6a36ce4a244f0\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11101111 for cells of type $lut.
+Using template $paramod$9d707d218adbd63b6f9a0c79d7ee037306fb6296\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10011111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01101001 for cells of type $lut.
+Using template $paramod$4282def8dbd6df3d1248ad282c629bee684502c2\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10010110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11101000 for cells of type $lut.
+Using template $paramod$765dca61dbfa835dacf2a260c8a4c5a36939a046\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01011100 for cells of type $lut.
+Using template $paramod$014b659db5d002405936b374e32d204782099707\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010111 for cells of type $lut.
+Using template $paramod$868427562418b5dc988caeac6a54689ec9c9025e\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10110010 for cells of type $lut.
+Using template $paramod$6f625205336ac6ce7b8747324becdbce1049bc9c\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01110001 for cells of type $lut.
+Using template $paramod$32f5ea57a02a66d26d4a2e3cd7f26ba05fa8bd58\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11010100 for cells of type $lut.
+Using template $paramod$3f0549729b9cf7d6fa6533d688d092bceca9764e\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00101011 for cells of type $lut.
+Using template $paramod$7921767ec42b10343b99f255bd2c4bd78b3f40a0\$lut for cells of type $lut.
+Using template $paramod$359fe4e746656bf9c72aecaff84fc7bdea9f55a5\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11001010 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11000101 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10111111 for cells of type $lut.
+Using template $paramod$161491d8314cab9d5d32db4aa31f31f4ef4f6dc6\$lut for cells of type $lut.
+Using template $paramod$774861bf9b1885d60265e6ddea1c95a32f095489\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00111010 for cells of type $lut.
+No more expansions possible.
+<suppressed ~1696 debug messages>
+Removed 0 unused cells and 1507 unused wires.
+
+3.45. Executing AUTONAME pass.
+Renamed 22366 objects in module ccsds_frame_sync (61 iterations).
+<suppressed ~1679 debug messages>
+
+3.46. Executing HIERARCHY pass (managing design hierarchy).
+
+3.46.1. Analyzing design hierarchy..
+Top module:  \ccsds_frame_sync
+
+3.46.2. Analyzing design hierarchy..
+Top module:  \ccsds_frame_sync
+Removed 0 unused modules.
+
+3.47. Printing statistics.
+
+=== ccsds_frame_sync ===
+
+   Number of wires:                510
+   Number of wire bits:           1925
+   Number of public wires:         510
+   Number of public wire bits:    1925
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1228
+     SB_CARRY                      179
+     SB_DFFESR                     334
+     SB_DFFESS                      18
+     SB_DFFSR                        5
+     SB_LUT4                       692
+
+3.48. Executing CHECK pass (checking for obvious problems).
+Checking module ccsds_frame_sync...
+Found and reported 0 problems.
+
+3.49. Executing JSON backend.
+
+4. Printing statistics.
+
+=== ccsds_frame_sync ===
+
+   Number of wires:                510
+   Number of wire bits:           1925
+   Number of public wires:         510
+   Number of public wire bits:    1925
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1228
+     SB_CARRY                      179
+     SB_DFFESR                     334
+     SB_DFFESS                      18
+     SB_DFFSR                        5
+     SB_LUT4                       692
+
+End of script. Logfile hash: 49a091d308, CPU: user 5.49s system 0.13s, MEM: 54.07 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 31% 31x opt_expr (1 sec), 12% 25x opt_clean (0 sec), ...

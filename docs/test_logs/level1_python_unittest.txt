@@ -1,0 +1,12 @@
+test_bit_flip_tolerance (test_phase1.TestCCSDSPhase1.test_bit_flip_tolerance) ... ok
+test_bpsk_no_noise (test_phase1.TestCCSDSPhase1.test_bpsk_no_noise) ... ok
+test_ccsds_asm_is_msb_first (test_phase1.TestCCSDSPhase1.test_ccsds_asm_is_msb_first) ... ok
+test_crc_reference_vector (test_phase1.TestCCSDSPhase1.test_crc_reference_vector) ... ok
+test_incorrect_frame_fails_crc (test_phase1.TestCCSDSPhase1.test_incorrect_frame_fails_crc) ... ok
+test_markers_are_found_after_an_insert_or_delete (test_phase1.TestCCSDSPhase1.test_markers_are_found_after_an_insert_or_delete) ... ok
+test_noiseless_detect_and_decode_every_frame (test_phase1.TestCCSDSPhase1.test_noiseless_detect_and_decode_every_frame) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.031s
+
+OK

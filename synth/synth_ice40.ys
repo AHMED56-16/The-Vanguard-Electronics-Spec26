@@ -1,0 +1,4 @@
+read_verilog ../rtl/ccsds_frame_sync.v
+chparam -set FB 1115 ccsds_frame_sync
+synth_ice40 -top ccsds_frame_sync -json ccsds_ice40.json
+tee -o ice40_stat.txt stat

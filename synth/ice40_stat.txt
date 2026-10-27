@@ -1,0 +1,19 @@
+
+4. Printing statistics.
+
+=== ccsds_frame_sync ===
+
+   Number of wires:                510
+   Number of wire bits:           1925
+   Number of public wires:         510
+   Number of public wire bits:    1925
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1228
+     SB_CARRY                      179
+     SB_DFFESR                     334
+     SB_DFFESS                      18
+     SB_DFFSR                        5
+     SB_LUT4                       692
+

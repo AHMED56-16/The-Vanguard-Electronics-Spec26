@@ -1,0 +1,16 @@
+
+SPEC'26 Level 1 - CCSDS Telemetry Frame Synchronizer
+=======================================================
+Standard ASM (MSB first): 0x1ACFFC1D | threshold: 28/32
+Eb/N0: 8 dB | measured BER: 0.00017 | BPSK theory: 0.00019
+True markers detected: 120/120 (100.0%); missed: 0
+False candidate positions: 1 (1.53 per 100k background positions)
+CRC-verified telemetry frames: 110/120
+  recovered @ bit    617  VC1: BUS=3.70V;SOLAR=13.0W;LOAD=8.5W
+  recovered @ bit   1161  VC2: PITCH=-0.6;ROLL=-0.2;YAW=87
+  recovered @ bit   1705  VC0: TEMP=22.6C;BAT=85%;MODE=OK
+  recovered @ bit   2249  VC1: BUS=3.76V;SOLAR=16.0W;LOAD=8.5W
+  recovered @ bit   2793  VC2: PITCH=+0.3;ROLL=+0.4;YAW=90
+
+Saved results to: /tmp/lv1
+Open walkthrough.html (separate HTML lab) to explore interactively.

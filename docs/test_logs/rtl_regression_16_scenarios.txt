@@ -1,0 +1,18 @@
+t01_clean      RESULT frames=39 acq=1 slips=0 lol=0 hdr_pulses=40 errors=0  --> PASS
+t02_inverted   RESULT frames=39 acq=1 slips=0 lol=0 hdr_pulses=40 errors=0  --> PASS
+t03_ber1pct    RESULT frames=39 acq=1 slips=0 lol=0 hdr_pulses=40 errors=0  --> PASS
+t04_ber5pct    RESULT frames=59 acq=1 slips=0 lol=0 hdr_pulses=60 errors=0  --> PASS
+t05_ber10pct   RESULT frames=55 acq=1 slips=0 lol=0 hdr_pulses=56 errors=0  --> PASS
+t06_slips      RESULT frames=59 acq=1 slips=6 lol=0 hdr_pulses=60 errors=0  --> PASS
+t07_bigslip    RESULT frames=39 acq=1 slips=2 lol=0 hdr_pulses=40 errors=0  --> PASS
+t08_burst      RESULT frames=44 acq=2 slips=0 lol=1 hdr_pulses=45 errors=0  --> PASS
+t09_derand     RESULT frames=39 acq=1 slips=0 lol=0 hdr_pulses=40 errors=0  --> PASS
+t10_gaps       RESULT frames=39 acq=1 slips=0 lol=0 hdr_pulses=40 errors=0  --> PASS
+t11_junk_long  RESULT frames=39 acq=1 slips=0 lol=0 hdr_pulses=40 errors=0  --> PASS
+t12_realFB1115 RESULT frames=11 acq=1 slips=1 lol=0 hdr_pulses=12 errors=0  --> PASS
+t13_checkN2    RESULT frames=38 acq=1 slips=0 lol=0 hdr_pulses=39 errors=0  --> PASS
+t14_noslipW0   RESULT frames=37 acq=2 slips=0 lol=1 hdr_pulses=38 errors=0  --> PASS
+x01_vanguard_8dB RESULT frames=118 acq=1 slips=0 lol=0 hdr_pulses=119 errors=0  --> PASS
+x02_vanguard_2dB_slips RESULT frames=118 acq=1 slips=23 lol=0 hdr_pulses=119 errors=0  --> PASS
+
+ALL PASS

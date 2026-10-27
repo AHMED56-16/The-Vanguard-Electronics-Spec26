@@ -1,0 +1,4 @@
+read_verilog ../rtl/ccsds_frame_sync.v
+chparam -set FB 1115 ccsds_frame_sync
+synth_xilinx -family xc7 -top ccsds_frame_sync
+tee -o xc7_stat.txt stat

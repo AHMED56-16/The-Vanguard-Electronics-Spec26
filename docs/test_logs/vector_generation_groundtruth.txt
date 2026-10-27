@@ -1,0 +1,14 @@
+t01_clean      bits=21909   model: frames=39  good=38  fly=1  slipF=0 acq=1 slips=0 lol=0 | truth: GOOD aligned 38/38, other aligned 1/1  OK
+t02_inverted   bits=21909   model: frames=39  good=38  fly=1  slipF=0 acq=1 slips=0 lol=0 | truth: GOOD aligned 38/38, other aligned 1/1  OK
+t03_ber1pct    bits=21909   model: frames=39  good=38  fly=1  slipF=0 acq=1 slips=0 lol=0 | truth: GOOD aligned 38/38, other aligned 1/1  OK
+t04_ber5pct    bits=32789   model: frames=59  good=58  fly=1  slipF=0 acq=1 slips=0 lol=0 | truth: GOOD aligned 58/58, other aligned 1/1  OK
+t05_ber10pct   bits=32789   model: frames=55  good=51  fly=4  slipF=0 acq=1 slips=0 lol=0 | truth: GOOD aligned 51/51, other aligned 4/4  OK
+t06_slips      bits=32789   model: frames=59  good=52  fly=4  slipF=3 acq=1 slips=6 lol=0 | truth: GOOD aligned 52/52, other aligned 4/7  OK
+t07_bigslip    bits=21909   model: frames=39  good=36  fly=2  slipF=1 acq=1 slips=2 lol=0 | truth: GOOD aligned 36/36, other aligned 2/3  OK
+t08_burst      bits=27349   model: frames=44  good=40  fly=4  slipF=0 acq=2 slips=0 lol=1 | truth: GOOD aligned 40/40, other aligned 2/4  OK
+t09_derand     bits=21909   model: frames=39  good=38  fly=1  slipF=0 acq=1 slips=0 lol=0 | truth: GOOD aligned 38/38, other aligned 1/1  OK
+t10_gaps       bits=21909   model: frames=39  good=38  fly=1  slipF=0 acq=1 slips=0 lol=0 | truth: GOOD aligned 38/38, other aligned 1/1  OK
+t11_junk_long  bits=26857   model: frames=39  good=38  fly=1  slipF=0 acq=1 slips=0 lol=0 | truth: GOOD aligned 38/38, other aligned 1/1  OK
+t12_realFB1115 bits=107572  model: frames=11  good=9   fly=1  slipF=1 acq=1 slips=1 lol=0 | truth: GOOD aligned 9/9, other aligned 2/2  OK
+t13_checkN2    bits=21909   model: frames=38  good=37  fly=1  slipF=0 acq=1 slips=0 lol=0 | truth: GOOD aligned 37/37, other aligned 1/1  OK
+t14_noslipW0   bits=21908   model: frames=37  good=33  fly=4  slipF=0 acq=2 slips=0 lol=1 | truth: GOOD aligned 33/33, other aligned 1/4  OK
